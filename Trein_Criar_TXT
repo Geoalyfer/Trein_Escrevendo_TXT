@@ -1,0 +1,41 @@
+Escrevendo arquivos TXT
+
+- para criar um arquivo também utilizamos a função `open()`
+- retorna um objeto do tipo `_io.TextIOWrapper`
+- para criar um arquivo configuramos o parâmetro `mode` como `w`
+- para atualizar um arquivo configuramos o parâmetro `mode` como `a`
+- precisamos fechar o arquivo ao final da sua utilização
+- podemos utilizar o `with` para facilitar a nossa vida!
+
+Função open()
+arquivo = open('nomes.txt', 'w')
+
+Método write()
+frase = 'Eu estou gostando demais da linguagem Python.\n'
+arquivo.write(frase)
+
+arquivo.close()
+
+Função <code>writelines()
+arquivo = open('nomes.txt', 'w')
+frases = ['Eu adoro o Python.\n', 'Estou aprendendo muito na Formação Python.\n',
+          'Eu estou aprendendo a manipular arquivos com o Python.']
+
+arquivo.writelines(frases)
+
+arquivo.close()
+
+# adicionando texto em um arquivo já exsitente
+arquivo = open('nomes.txt', 'a')
+
+arquivo.write('\n\nFinalizando a escrita em arquivos com Python.!\n')
+
+arquivo.close()
+
+Utilizando with
+with open('nomes.txt', 'w') as arquivo:
+    arquivo.closed
+    arquivo.write('Escrevendo em um arquivo TXT utilizando o bloco WITH!')  
+
+arquivo.closed
+
